@@ -111,6 +111,7 @@ func ProfilePost(ctx *context.Context) {
 	ctx.Doer.KeepEmailPrivate = form.KeepEmailPrivate
 	ctx.Doer.Website = form.Website
 	ctx.Doer.Location = form.Location
+	ctx.Doer.Pronouns = form.Pronouns
 	ctx.Doer.Description = form.Description
 	ctx.Doer.KeepActivityPrivate = form.KeepActivityPrivate
 	ctx.Doer.Visibility = form.Visibility

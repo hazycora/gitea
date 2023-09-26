@@ -13,7 +13,7 @@
 	</div>
 	<div class="content gt-word-break profile-avatar-name">
 		{{if .ContextUser.FullName}}<span class="header text center">{{.ContextUser.FullName}}</span>{{end}}
-		<span class="username text center">{{.ContextUser.Name}}</span>
+		<span class="username text center">{{.ContextUser.Name}}{{if .ContextUser.Pronouns}} · {{.ContextUser.Pronouns}}{{end}}</span>
 		<div class="gt-mt-3">
 			<a class="muted" href="{{.ContextUser.HomeLink}}?tab=followers">{{svg "octicon-person" 18 "gt-mr-2"}}{{.NumFollowers}} {{.locale.Tr "user.followers"}}</a> · <a class="muted" href="{{.ContextUser.HomeLink}}?tab=following">{{.NumFollowing}} {{.locale.Tr "user.following"}}</a>
 			{{if .EnableFeed}}

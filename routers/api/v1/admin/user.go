@@ -247,6 +247,9 @@ func EditUser(ctx *context.APIContext) {
 	if form.Description != nil {
 		ctx.ContextUser.Description = *form.Description
 	}
+	if form.Pronouns != nil {
+		ctx.ContextUser.Pronouns = *form.Pronouns
+	}
 	if form.Active != nil {
 		ctx.ContextUser.IsActive = *form.Active
 	}

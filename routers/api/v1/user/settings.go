@@ -56,6 +56,9 @@ func UpdateUserSettings(ctx *context.APIContext) {
 	if form.Location != nil {
 		ctx.Doer.Location = *form.Location
 	}
+	if form.Pronouns != nil {
+		ctx.Doer.Language = *form.Pronouns
+	}
 	if form.Language != nil {
 		ctx.Doer.Language = *form.Language
 	}
