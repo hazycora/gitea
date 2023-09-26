@@ -47,6 +47,7 @@ func Profile(ctx *context.Context) {
 	ctx.Data["DisableGravatar"] = system_model.GetSettingWithCacheBool(ctx, system_model.KeyPictureDisableGravatar,
 		setting.GetDefaultDisableGravatar(),
 	)
+	ctx.Data["PronounsAreCustom"] = ctx.Doer.Pronouns != "he/him" && ctx.Doer.Pronouns != "she/her" && ctx.Doer.Pronouns != "they/them" && ctx.Doer.Pronouns != "it/its"
 
 	ctx.HTML(http.StatusOK, tplSettingsProfile)
 }
@@ -91,6 +92,7 @@ func ProfilePost(ctx *context.Context) {
 	ctx.Data["DisableGravatar"] = system_model.GetSettingWithCacheBool(ctx, system_model.KeyPictureDisableGravatar,
 		setting.GetDefaultDisableGravatar(),
 	)
+	ctx.Data["PronounsAreCustom"] = ctx.Doer.Pronouns != "he/him" && ctx.Doer.Pronouns != "she/her" && ctx.Doer.Pronouns != "they/them" && ctx.Doer.Pronouns != "it/its"
 
 	if ctx.HasError() {
 		ctx.HTML(http.StatusOK, tplSettingsProfile)
